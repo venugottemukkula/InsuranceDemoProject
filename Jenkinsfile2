@@ -28,7 +28,7 @@ pipeline{
 
      stage('Docker image creation')  {
        steps {
-           sh 'docker build -t venugottemukkula/insureproject:latest .
+           sh 'docker build -t venugottemukkula/insureproject:latest .'
                   }
              }
         stage('DockerLogin') {
@@ -40,6 +40,6 @@ pipeline{
         steps {
            sh 'docker push venugottemukkula/insureproject:latest'
                  }
-         }
+        }
     }
 }
