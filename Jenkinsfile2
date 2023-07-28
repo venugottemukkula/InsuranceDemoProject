@@ -33,8 +33,9 @@ pipeline{
              }
         stage('DockerLogin') {
          steps { 
-             withCredentials([usernamePassword(credentialsId: 'Docker-Hub', passwordVariable: 'dockerposs', usernameVariable: 'dockerhub')]) {
-                           sh "dockerlogin -u ${env.dockerhub} -p ${env.dockerp0ss"
+             withCredentials([usernamePassword(credentialsId: 'Docker-Hub', passwordVariable: 'dockerPossword', usernameVariable: 'dockerHubUser')]) {
+                           sh "dockerlogin -u ${env.dockerHubUser} -p ${env.dockerPossword"
+
       }
                }
             }
@@ -43,5 +44,6 @@ pipeline{
            sh 'docker push venugottemukkula/insureproject:latest'
                  }
         }
-    }
-}
+      }
+    }                 
+  } 
